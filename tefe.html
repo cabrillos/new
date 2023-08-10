@@ -18,9 +18,10 @@ body {
 <script>
 var playerInstance = jwplayer("player");
 
-fetch("https://tcnt.golf/telefe.json") // Cambia a una URL absoluta con el protocolo
-    .then(response => response.json())
-    .then(jsonResponse => {
+var ghttp = new XMLHttpRequest();
+ghttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var jsonResponse = JSON.parse(ghttp.responseText);
         var m3u8 = jsonResponse['url'];
         playerInstance.setup({
             title: "",
@@ -34,10 +35,13 @@ fetch("https://tcnt.golf/telefe.json") // Cambia a una URL absoluta con el proto
             autostart: true,
             cast: {}
         });
-    })
-    .catch(error => {
-        console.error("Error fetching JSON:", error);
-    });
+    }
+}
+
+// Cambia la URL a la página externa que contiene el JSON
+var externalUrl = "https://tcnt.golf/telefe.json";
+ghttp.open("GET", externalUrl, true);
+ghttp.send();
 </script>
 </body>
 </html>
