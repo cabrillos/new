@@ -18,7 +18,7 @@ body {
 <script>
 var playerInstance = jwplayer("player");
 
-fetch("tcnt.golf/telefe.json")
+fetch("https://tcnt.golf/telefe.json") // Cambia a una URL absoluta con el protocolo
     .then(response => response.json())
     .then(jsonResponse => {
         var m3u8 = jsonResponse['url'];
