@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+ body, html {
+   margin: 0;
+   padding: 0;
+   background-color:#000
+}
+        </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+<script src="https://wa.cdn-surfline.com/quiver/0.19.0/scripts/jwplayer.js" type="88aa5bac843ad99412bdf7ba-text/javascript"></script><script type="88aa5bac843ad99412bdf7ba-text/javascript">
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var getURL = getParameterByName('get');
+//if (getURL == "#") {alert('Vuelve a la pagina anterior');}
+//if (getURL == "") {location.href="https://sfntv.xyz/";}
+if (getURL.length > 10) {
+var container = document.getElementById('bitmovin-94527');
+}
+</script>
+<div id="players"></div>
+<script type="88aa5bac843ad99412bdf7ba-text/JavaScript">
+    jwplayer("players").setup({ 
+    	"cast": {},
+        "autostart": true,
+        "mute": false,  
+        width: "100%",
+    height: "100%",
+    autostart: true,
+    mute: false,
+    cast: {},
+    sharing: {},
+        "playlist": [{
+        	"title": "sfntv.xyz | Reproductor",
+          "description": "sfntvxyz",
+            "default": false,
+            "type": "hls",
+            "file": atob(getURL),      
+            "label": "0"
+        }]
+    });
+</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="88aa5bac843ad99412bdf7ba-|49" defer></script><script>(function(){var js = "window['__CF$cv$params']={r:'7f6c7a5a38933353',t:'MTY5MjA1MDUwMi44MjIwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
