@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var hls = new Hls();
     
     // URL de la transmisión en vivo en formato m3u8
-    var streamUrl = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?master.m3u8";
+    var streamUrl = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?master.m3u8"; // Reemplaza con la URL real de tu transmisión en vivo
     
     hls.loadSource(streamUrl);
     hls.attachMedia(video);
