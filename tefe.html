@@ -9,17 +9,23 @@ body {
    overflow: hidden;
 }
 </style>
-<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css">
-<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-<video id="player" controls crossorigin playsinline autoplay>
-  <source src="https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?PlaylistM3UCL.m3u8" type="application/x-mpegURL">
-</video>
+<video id="video" controls autoplay></video>
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
-  const player = new Plyr('#player');
+  if (Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    
+    // URL de la transmisión en vivo en formato m3u8
+    var streamUrl = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?Master.m3u8";
+    
+    hls.loadSource(streamUrl);
+    hls.attachMedia(video);
+  }
 });
 </script>
 </body>
