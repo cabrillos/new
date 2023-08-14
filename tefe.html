@@ -5,18 +5,27 @@
 body {
    margin: 0;
    padding: 0;
-   background-color: #000
+   background-color: #000;
    overflow: hidden;
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/player.js"></script>
 </head>
 <body>
-</script>
-<iframe id="iframe" referrerpolicy="no-referrer" allow="encrypted-media; autoplay"
-	style="height:100%; width:100%; position:absolute" frameborder allowfullscreen></iframe>
-<script type="">
-var link = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?.m3u8";
-   setTimeout(() => {document.getElementById('iframe').src = link;}, 80);
+<div id="player-container" style="height: 100%; width: 100%; position: absolute;"></div>
+
+<script type="text/javascript">
+var link = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?master.m3u8";
+
+// Configurar el reproductor de Player.js
+var player = new Player({
+  target: '#player-container',
+  video: {
+    url: link,
+    autoplay: true,
+    controls: true
+  }
+});
 </script>
 </body>
 </html>
