@@ -9,22 +9,17 @@ body {
    overflow: hidden;
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/player.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css">
+<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
 </head>
 <body>
-<div id="player-container" style="height: 100%; width: 100%; position: absolute;"></div>
+<video id="player" controls crossorigin playsinline autoplay>
+  <source src="https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?PlaylistM3UCL.m3u8" type="application/x-mpegURL">
+</video>
 
 <script type="text/javascript">
-var link = "https://telefe.com/Api/Videos/GetSourceUrl/694564/0/HLS?master.m3u8";
-
-// Configurar el reproductor de Player.js
-var player = new Player({
-  target: '#player-container',
-  video: {
-    url: link,
-    autoplay: true,
-    controls: true
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const player = new Plyr('#player');
 });
 </script>
 </body>
